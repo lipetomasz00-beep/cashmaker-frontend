@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raport Finansowy</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#0b0b0f;color:white;text-align:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px}
+.card{background:#12121a;padding:25px;border-radius:15px;cursor:pointer}
+.hidden{display:none}
+button{padding:15px;border:none;border-radius:10px;background:red;color:white;margin-top:20px}
+select{padding:10px;margin:10px}
+</style>
+</head>
+
+<body>
+
+<h2>FINANCIAL FREEDOM</h2>
+
+<div id="home">
+  <div class="grid">
+    <div class="card" onclick="startQuiz()">💸<br>Szybka gotówka</div>
+    <div class="card" onclick="startQuiz()">🎁<br>Premia bankowa</div>
+    <div class="card" onclick="startQuiz()">🏢<br>Dla firm</div>
+    <div class="card" onclick="startQuiz()">🔄<br>Konsolidacja</div>
+  </div>
+</div>
+
+<div id="quiz" class="hidden">
+
+  <p>Ile potrzebujesz?</p>
+  <select id="amount">
+    <option>do 3k</option>
+    <option>3k-10k</option>
+    <option>10k+</option>
+  </select>
+
+  <p>Jak szybko?</p>
+  <select id="time">
+    <option>Dziś</option>
+    <option>Kilka dni</option>
+  </select>
+
+  <p>Zdolność?</p>
+  <select id="score">
+    <option>Dobra</option>
+    <option>Słaba</option>
+  </select>
+
+  <p>Wiek</p>
+  <select id="age">
+    <option value="young">18–24</option>
+    <option value="adult">25+</option>
+  </select>
+
+  <br>
+  <button onclick="goOffer()">Sprawdź dopasowaną ofertę</button>
+
+</div>
+
+<script>
+
+function startQuiz(){
+  document.getElementById("home").classList.add("hidden")
+  document.getElementById("quiz").classList.remove("hidden")
+}
+
+function goOffer(){
+
+  const age = document.getElementById("age").value
+
+  let url = "https://www.google.com"
+
+  if(age === "young"){
+    url = "https://www.wp.pl"
+  }
+
+  window.location.href = url
+}
+
+</script>
+
+</body>
+</html>
