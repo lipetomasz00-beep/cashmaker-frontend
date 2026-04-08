@@ -126,7 +126,7 @@ setInterval(()=>{
 /* REDIRECT */
 function goOffer(){
   const params = window.location.search
-  window.location.href = "/"+params
+  window.location.href = "/go" + params
 }
 
 </script>
